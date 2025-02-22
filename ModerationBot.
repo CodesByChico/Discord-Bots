@@ -1,0 +1,21 @@
+#This bot was made all in BDS Script
+#Comands are ?ban ?warn ?cute
+#?Ban bans the person ; ?cute says a cute message ; ?warn warns the user in the dms
+#Portuguese Dev so somethings are in Portuguese
+
+#Ban the user
+
+$onlyPerms[ban;You don't have permission to ban members!]
+$ban[$mentioned[1];$guildID;0;$replaceText[$message;$mentioned[1];]]
+$sendMessage[<@$mentioned[1]> has been banned! 🚫;no]
+
+#Say a cute message
+
+$randomText[You're as cute as a cat sleeping in the sun! 😻;You're my favorite person in the world! 💖;You make my heart go *doki doki*! 💓;I want to hug you forever! 🥰;You're sweeter than the sweetest candy! 🍬]
+
+#warn user
+
+$onlyIf[$mentioned[1]!=;You need to mention a user!]
+$dm[$mentioned[1]]
+⚠️ You have been warned for bad behavior. Please follow the server rules!
+$sendMessage[<@$mentioned[1]> has been warned via DM.;no]
